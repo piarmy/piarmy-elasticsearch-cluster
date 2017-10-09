@@ -1,0 +1,16 @@
+curl -XGET "http://elasticsearch:9200/_search" -H 'Content-Type: application/json' -d'
+{
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "CPU": {
+              "gte": "90"
+            }
+          }
+        }
+      ]
+    }
+  }
+}'
